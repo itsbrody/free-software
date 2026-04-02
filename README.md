@@ -25,7 +25,7 @@ Die einzelnen Projekte werden als Unterordner oder Submodule organisiert und bri
 
 ## Warum Freiheit?
 
-Mein Firmenname [Klare Beratung](https://klare-beratung.de) steht für Klarheit — die Voraussetzung dafür, gute Entscheidungen zu treffen. Dieses Repository steht für den zweiten Wert, der mir ebenso wichtig ist: **Freiheit**.
+Mein Firmenname [Clear Consulting LLC](https://klare-beratung.de) steht für Klarheit — die Voraussetzung dafür, gute Entscheidungen zu treffen. Dieses Repository steht für den zweiten Wert, der mir ebenso wichtig ist: **Freiheit**.
 
 Freiheit bedeutet für mich:
 
@@ -64,7 +64,7 @@ Du möchtest ein Projekt in eine eigene Richtung weiterentwickeln? Dann fork es 
 
 *Clarity* creates understanding. *Freedom* creates agency. Together, they create sovereignty.
 
-I'm the founder of [Klare Beratung](https://klare-beratung.de), where clarity and freedom go hand in hand — in technology, in data, and in how we shape our lives. This repository brings the freedom side to life: open-source tools, adaptations of existing projects, and resources for digital sovereignty — all released under recognized free licenses, built on open formats, and meant to be useful in practice.
+I'm the founder of [Clear Consulting LLC](https://klare-beratung.de), where clarity and freedom go hand in hand — in technology, in data, and in how we shape our lives. This repository brings the freedom side to life: open-source tools, adaptations of existing projects, and resources for digital sovereignty — all released under recognized free licenses, built on open formats, and meant to be useful in practice.
 
 Contributions are welcome — open issues, submit pull requests, or simply fork and build on what's here. That's what free software is for.
 
