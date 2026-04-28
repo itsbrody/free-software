@@ -33,13 +33,10 @@ Deshalb setze ich auf freie Software und freie Daten — nicht als Dogma, sonder
 
 ## Was hier entsteht
 
-Dieses Repository versammelt:
+Eigenständige Projekte mit eigenem Repository und kleinere Tools, die hier im Repo gesammelt sind.
 
-* **Eigene Entwicklungen** — Werkzeuge und Lösungen, die im Rahmen meiner Beratungstätigkeit und aus persönlicher Überzeugung entstehen.
-* **Angepasste Software** — Bestehende freie Projekte, die ich für konkrete Einsatzzwecke erweitere oder verbessere.
-* **Unterstützte Projekte** — Software, die ich aktiv nutze und deren Weiterentwicklung ich fördere.
-
-Die einzelnen Projekte werden als Unterordner oder Submodule organisiert und bringen jeweils eigene Dokumentation mit.
+<!-- PROJECTS_START -->
+<!-- PROJECTS_END -->
 
 ## Warum Freiheit?
 
@@ -102,6 +99,10 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 * [Sign the petition](https://www.change.org/p/stop-google-from-limiting-apk-file-usage/) (over 100,000 signatories)
 * Contribute to the [campaign repo](https://github.com/keepandroidopen/keepandroidopen.github.io) — translations and improvements welcome
 
+### Projects
+
+<!-- PROJECTS_EN_START -->
+<!-- PROJECTS_EN_END -->
 ---
 
 *Selbstbestimmt leben, digital wie analog.*
