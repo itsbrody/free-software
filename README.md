@@ -36,6 +36,13 @@ Deshalb setze ich auf freie Software und freie Daten — nicht als Dogma, sonder
 Eigenständige Projekte mit eigenem Repository und kleinere Tools, die hier im Repo gesammelt sind.
 
 <!-- PROJECTS_START -->
+
+### Projekte
+
+**FreeMyMap** — Befreit Karten-Links von proprietären Diensten — Google Maps & Apple Maps rein, OpenStreetMap raus. Weltweit, frei, ohne Tracking.  
+Tech: PHP, JavaScript, HTML · Lizenz: MIT · [GitHub](https://github.com/itsbrody/FreeMyMap)
+Fork von [Maps2BayernAtlas](https://github.com/LukaWe/Maps2BayernAtlas) von LukaWe (MIT)
+
 <!-- PROJECTS_END -->
 
 ## Warum Freiheit?
@@ -102,6 +109,9 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 ### Projects
 
 <!-- PROJECTS_EN_START -->
+
+- **FreeMyMap** → [GitHub](https://github.com/itsbrody/FreeMyMap)
+
 <!-- PROJECTS_EN_END -->
 ---
 
