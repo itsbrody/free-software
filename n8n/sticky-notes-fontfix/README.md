@@ -14,7 +14,6 @@ CSS-Regel über das Browser-Addon **Stylus** injizieren.
 
 1. [Stylus](https://add-ons.mozilla.org/firefox/addon/styl-us/) installieren (Firefox) oder [Chrome-Version](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 2. `n8n-sticky-notes-fontfix.user.css` öffnen → Stylus bietet automatisch die Installation an
-3. Domain anpassen: `DEINE-N8N-DOMAIN.de` durch die eigene n8n-URL ersetzen
 
 ## Warum dieser Selektor?
 
@@ -24,6 +23,7 @@ Im Anzeigemodus rendert n8n den Markdown-Text als plain HTML (`<p>`, `<h1>`–`<
 
 ## Getestet
 
+- n8n 2.x
 - Firefox (aktuell) auf Ubuntu
 - Firefox 115 ESR: kompatibel laut Stylus-Metadaten (`strict_min_version: 57`)
 
