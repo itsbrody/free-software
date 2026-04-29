@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSM → OsmAnd Pin</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface-2: #232733;
+    --border: #2e3344;
+    --text: #e4e7ef;
+    --text-dim: #8890a4;
+    --osm-green: #7ebc6f;
+    --osm-green-dim: rgba(126, 188, 111, 0.15);
+    --osmand-orange: #f28c28;
+    --osmand-orange-dim: rgba(242, 140, 40, 0.12);
+    --accent: #5b9cf5;
+    --error: #e5534b;
+    --error-dim: rgba(229, 83, 75, 0.12);
+    --success: #57ab5a;
+    --radius: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+
+  header h1 .osm { color: var(--osm-green); }
+  header h1 .arrow { color: var(--text-dim); margin: 0 0.15em; font-weight: 400; }
+  header h1 .osmand { color: var(--osmand-orange); }
+
+  header p {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .input-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .input-group:focus-within {
+    border-color: var(--osm-green);
+  }
+
+  .input-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.6rem;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .input-row input {
+    flex: 1;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    padding: 0.65rem 0.8rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .input-row input:focus {
+    border-color: var(--osm-green);
+  }
+
+  .input-row input::placeholder {
+    color: var(--text-dim);
+    opacity: 0.5;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.1rem;
+    border: none;
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-convert {
+    background: var(--osm-green);
+    color: #0f1117;
+  }
+  .btn-convert:hover { filter: brightness(1.1); }
+
+  .btn-paste {
+    background: var(--surface-2);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    padding: 0.65rem 0.8rem;
+  }
+  .btn-paste:hover { border-color: var(--text-dim); color: var(--text); }
+
+  /* Result area */
+  .result {
+    display: none;
+    margin-top: 0.5rem;
+  }
+
+  .result.show { display: block; }
+
+  .result-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .result-header .label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--osmand-orange);
+  }
+
+  .result-actions {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .btn-sm {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+    border-radius: 5px;
+  }
+
+  .btn-copy {
+    background: var(--osmand-orange-dim);
+    color: var(--osmand-orange);
+    border: 1px solid transparent;
+  }
+  .btn-copy:hover { border-color: var(--osmand-orange); }
+  .btn-copy.copied {
+    background: rgba(87, 171, 90, 0.15);
+    color: var(--success);
+  }
+
+  .btn-open {
+    background: var(--osmand-orange);
+    color: #0f1117;
+  }
+  .btn-open:hover { filter: brightness(1.1); }
+
+  .result-url {
+    padding: 1rem 1.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--text);
+    word-break: break-all;
+    line-height: 1.6;
+    user-select: all;
+  }
+
+  .result-url a {
+    color: var(--osmand-orange);
+    text-decoration: none;
+  }
+  .result-url a:hover { text-decoration: underline; }
+
+  /* Meta info */
+  .meta {
+    padding: 0.8rem 1.25rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  .meta-item {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+  .meta-item span {
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+  }
+
+  /* Error */
+  .error-msg {
+    display: none;
+    background: var(--error-dim);
+    border: 1px solid var(--error);
+    border-radius: var(--radius);
+    padding: 0.85rem 1.25rem;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--error);
+  }
+  .error-msg.show { display: block; }
+
+  /* Examples */
+  .examples {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .examples h3 {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.8rem;
+  }
+
+  .example-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.8rem;
+    margin-bottom: 0.35rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.15s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .example-item:hover {
+    border-color: var(--osm-green);
+    color: var(--text);
+  }
+
+  .example-item .tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .tag-node { background: var(--osm-green-dim); color: var(--osm-green); }
+  .tag-edit { background: var(--osmand-orange-dim); color: var(--osmand-orange); }
+  .tag-way { background: rgba(91, 156, 245, 0.15); color: var(--accent); }
+
+  /* Footer */
+  footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  footer a { color: var(--osm-green); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* API fetch indicator */
+  .fetching {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.25rem;
+    margin-top: 0.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+  .fetching.show { display: flex; }
+  .spinner {
+    width: 16px; height: 16px;
+    border: 2px solid var(--border);
+    border-top-color: var(--osm-green);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Node name display */
+  .node-name {
+    padding: 0.6rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .node-name .node-type {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-right: 0.4rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><span class="osm">OSM</span><span class="arrow">→</span><span class="osmand">OsmAnd Pin</span></h1>
+    <p>OpenStreetMap-URL einfügen, OsmAnd-Pin-Link erhalten.<br>Funktioniert mit Node-, Way- und Relation-URLs — Lese- und Editmodus.</p>
+  </header>
+
+  <div class="input-group">
+    <label>OpenStreetMap URL</label>
+    <div class="input-row">
+      <input type="text" id="osmUrl" placeholder="https://www.openstreetmap.org/node/9309537129" autofocus>
+      <button class="btn btn-paste" onclick="pasteUrl()" title="Aus Zwischenablage einfügen">📋</button>
+      <button class="btn btn-convert" onclick="convert()">Pin →</button>
+    </div>
+  </div>
+
+  <div class="fetching" id="fetching">
+    <div class="spinner"></div>
+    <span>Lade Koordinaten von OSM API …</span>
+  </div>
+
+  <div class="error-msg" id="error"></div>
+
+  <div class="result" id="result">
+    <div class="result-card">
+      <div class="result-header">
+        <span class="label">OsmAnd Pin-URL</span>
+        <div class="result-actions">
+          <button class="btn btn-sm btn-copy" id="copyBtn" onclick="copyUrl()">Kopieren</button>
+          <button class="btn btn-sm btn-open" onclick="openUrl()">Öffnen ↗</button>
+        </div>
+      </div>
+      <div id="nodeName" class="node-name" style="display:none"></div>
+      <div class="result-url" id="resultUrl"></div>
+      <div class="meta" id="meta"></div>
+    </div>
+  </div>
+
+  <div class="examples">
+    <h3>Beispiele anklicken</h3>
+    <div class="example-item" onclick="useExample(this)">
+      <span class="tag tag-node">Node</span>
+      Knoten: Berlin — https://www.openstreetmap.org/node/240109189
+    </div>
+    <div class="example-item" onclick="useExample(this)">
+      <span class="tag tag-edit">Edit</span>
+      Fernsehturm (Edit) — https://www.openstreetmap.org/edit?way=556435241#map=17/52.5208/13.4094
+    </div>
+    <div class="example-item" onclick="useExample(this)">
+      <span class="tag tag-way">Way</span>
+      Brandenburger Tor — https://www.openstreetmap.org/way/518071791
+    </div>
+  </div>
+
+  <footer>
+    Freie Software · Keine Anmeldung · Keine Cookies<br>
+    Daten von <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a> · Pin via <a href="https://osmand.net" target="_blank">OsmAnd Web</a>
+  </footer>
+</div>
+
+<script>
+  let lastPinUrl = '';
+
+  // Parse any OSM URL and extract element type + ID
+  function parseOsmUrl(url) {
+    url = url.trim();
+    // Normalize: add protocol if missing
+    if (url.match(/^(www\.)?openstreetmap\.org/)) url = 'https://' + url;
+
+    let type, id, lat, lon;
+
+    // Edit mode: /edit?node=ID or /edit?way=ID or /edit?relation=ID
+    const editMatch = url.match(/openstreetmap\.org\/edit\?(\w+)=(\d+)/i);
+    if (editMatch) {
+      type = editMatch[1]; // node, way, relation
+      id = editMatch[2];
+      // Edit URL might have #map=z/lat/lon — use as fallback
+      const hashMatch = url.match(/#map=[\d.]+\/([-\d.]+)\/([-\d.]+)/);
+      if (hashMatch) {
+        lat = parseFloat(hashMatch[1]);
+        lon = parseFloat(hashMatch[2]);
+      }
+      return { type, id, lat, lon, needsApi: true };
+    }
+
+    // Read mode: /node/ID or /way/ID or /relation/ID
+    const readMatch = url.match(/openstreetmap\.org\/(node|way|relation)\/(\d+)/i);
+    if (readMatch) {
+      type = readMatch[1];
+      id = readMatch[2];
+      // Some URLs have #map=z/lat/lon
+      const hashMatch = url.match(/#map=[\d.]+\/([-\d.]+)\/([-\d.]+)/);
+      if (hashMatch) {
+        lat = parseFloat(hashMatch[1]);
+        lon = parseFloat(hashMatch[2]);
+      }
+      return { type, id, lat, lon, needsApi: true };
+    }
+
+    // Map-only URL: openstreetmap.org/#map=z/lat/lon (no specific object)
+    const mapOnly = url.match(/openstreetmap\.org\/?#map=[\d.]+\/([-\d.]+)\/([-\d.]+)/i);
+    if (mapOnly) {
+      lat = parseFloat(mapOnly[1]);
+      lon = parseFloat(mapOnly[2]);
+      return { type: null, id: null, lat, lon, needsApi: false };
+    }
+
+    return null;
+  }
+
+  // Fetch coordinates from OSM API
+  async function fetchFromApi(type, id) {
+    const apiUrl = `https://api.openstreetmap.org/api/0.6/${type}/${id}.json`;
+    const resp = await fetch(apiUrl);
+    if (!resp.ok) throw new Error(`OSM API: ${resp.status} ${resp.statusText}`);
+    const data = await resp.json();
+    const el = data.elements[0];
+
+    let lat, lon, name, tags;
+
+    if (type === 'node') {
+      lat = el.lat;
+      lon = el.lon;
+    } else if (type === 'way' || type === 'relation') {
+      // For ways/relations: need to get center via /full or use first node
+      // Use separate call with .json to get the computed center
+      // The simplest approach: for ways, fetch full and compute center
+      if (type === 'way') {
+        const fullResp = await fetch(`https://api.openstreetmap.org/api/0.6/way/${id}/full.json`);
+        if (fullResp.ok) {
+          const fullData = await fullResp.json();
+          const nodes = fullData.elements.filter(e => e.type === 'node');
+          if (nodes.length > 0) {
+            lat = nodes.reduce((s, n) => s + n.lat, 0) / nodes.length;
+            lon = nodes.reduce((s, n) => s + n.lon, 0) / nodes.length;
+          }
+        }
+      } else if (type === 'relation') {
+        // For relations, try to find center members
+        // Fallback: use the map hash coordinates if available
+        // Or fetch with /full — can be large, so let's use a simpler approach
+        const fullResp = await fetch(`https://api.openstreetmap.org/api/0.6/relation/${id}.json`);
+        if (fullResp.ok) {
+          const fullData = await fullResp.json();
+          // Try to get first node member's coordinates
+          const nodeMembers = fullData.elements[0]?.members?.filter(m => m.type === 'node') || [];
+          if (nodeMembers.length > 0) {
+            const nodeResp = await fetch(`https://api.openstreetmap.org/api/0.6/node/${nodeMembers[0].ref}.json`);
+            if (nodeResp.ok) {
+              const nodeData = await nodeResp.json();
+              lat = nodeData.elements[0].lat;
+              lon = nodeData.elements[0].lon;
+            }
+          }
+        }
+      }
+    }
+
+    tags = el.tags || {};
+    name = tags.name || tags['name:en'] || tags['name:de'] || null;
+
+    return { lat, lon, name, tags, type, id };
+  }
+
+  // Build OsmAnd pin URL
+  function buildPinUrl(lat, lon, zoom) {
+    zoom = zoom || 18;
+    // OsmAnd format: ?pin=lat,lon#zoom/lat/lon
+    return `https://osmand.net/map/?pin=${lat},${lon}#${zoom}/${lat}/${lon}`;
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('error');
+    el.textContent = msg;
+    el.classList.add('show');
+    document.getElementById('result').classList.remove('show');
+    document.getElementById('fetching').classList.remove('show');
+  }
+
+  function clearError() {
+    document.getElementById('error').classList.remove('show');
+  }
+
+  async function convert() {
+    clearError();
+    const url = document.getElementById('osmUrl').value;
+    if (!url.trim()) { showError('Bitte eine OpenStreetMap-URL einfügen.'); return; }
+
+    const parsed = parseOsmUrl(url);
+    if (!parsed) {
+      showError('URL nicht erkannt. Erwartet: openstreetmap.org/node/ID, /way/ID, /relation/ID oder /edit?node=ID');
+      return;
+    }
+
+    let lat = parsed.lat, lon = parsed.lon, name = null;
+
+    // Always fetch from API for precise coordinates when we have type+id
+    if (parsed.type && parsed.id) {
+      document.getElementById('fetching').classList.add('show');
+      document.getElementById('result').classList.remove('show');
+      try {
+        const apiResult = await fetchFromApi(parsed.type, parsed.id);
+        if (apiResult.lat != null && apiResult.lon != null) {
+          lat = apiResult.lat;
+          lon = apiResult.lon;
+        }
+        name = apiResult.name;
+      } catch (e) {
+        // If API fails but we have hash coords, use those
+        if (lat == null || lon == null) {
+          showError(`Koordinaten konnten nicht ermittelt werden: ${e.message}`);
+          return;
+        }
+      }
+      document.getElementById('fetching').classList.remove('show');
+    }
+
+    if (lat == null || lon == null) {
+      showError('Keine Koordinaten gefunden. Bitte eine URL mit einem konkreten Objekt verwenden.');
+      return;
+    }
+
+    // Round to 6 decimals for clean URL
+    const latR = Math.round(lat * 1e6) / 1e6;
+    const lonR = Math.round(lon * 1e6) / 1e6;
+
+    lastPinUrl = buildPinUrl(latR, lonR, 18);
+
+    // Display result
+    const resultEl = document.getElementById('result');
+    document.getElementById('resultUrl').innerHTML = `<a href="${lastPinUrl}" target="_blank">${lastPinUrl}</a>`;
+
+    const nameEl = document.getElementById('nodeName');
+    if (name) {
+      const typeLabel = parsed.type === 'node' ? 'Node' : parsed.type === 'way' ? 'Way' : 'Relation';
+      nameEl.innerHTML = `<span class="node-type">${typeLabel}</span>${escHtml(name)}`;
+      nameEl.style.display = 'block';
+    } else {
+      nameEl.style.display = 'none';
+    }
+
+    const meta = document.getElementById('meta');
+    meta.innerHTML = `
+      <div class="meta-item">Lat <span>${latR}</span></div>
+      <div class="meta-item">Lon <span>${lonR}</span></div>
+      ${parsed.type ? `<div class="meta-item">Typ <span>${parsed.type}</span></div>` : ''}
+      ${parsed.id ? `<div class="meta-item">ID <span>${parsed.id}</span></div>` : ''}
+    `;
+
+    resultEl.classList.add('show');
+    document.getElementById('copyBtn').textContent = 'Kopieren';
+    document.getElementById('copyBtn').classList.remove('copied');
+  }
+
+  function escHtml(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  async function copyUrl() {
+    if (!lastPinUrl) return;
+    try {
+      await navigator.clipboard.writeText(lastPinUrl);
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = '✓ Kopiert';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Kopieren'; btn.classList.remove('copied'); }, 2000);
+    } catch (e) {
+      // Fallback
+      const ta = document.createElement('textarea');
+      ta.value = lastPinUrl;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+  }
+
+  function openUrl() {
+    if (lastPinUrl) window.open(lastPinUrl, '_blank');
+  }
+
+  async function pasteUrl() {
+    try {
+      const text = await navigator.clipboard.readText();
+      document.getElementById('osmUrl').value = text;
+      convert();
+    } catch (e) {
+      document.getElementById('osmUrl').focus();
+    }
+  }
+
+  function useExample(el) {
+    // Extract the URL from descriptive text like "Beschreibung — https://..."
+    const text = el.textContent;
+    const urlMatch = text.match(/(https?:\/\/www\.openstreetmap\.org\/\S+)/);
+    if (urlMatch) {
+      document.getElementById('osmUrl').value = urlMatch[1];
+      convert();
+    }
+  }
+
+  // Auto-convert on paste
+  document.getElementById('osmUrl').addEventListener('paste', () => {
+    setTimeout(convert, 50);
+  });
+
+  // Convert on Enter
+  document.getElementById('osmUrl').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') convert();
+  });
+</script>
+</body>
+</html>

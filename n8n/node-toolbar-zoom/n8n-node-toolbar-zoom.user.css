@@ -1,0 +1,27 @@
+/* ==UserStyle==
+@name         n8n Node Toolbar Zoom
+@namespace    github.com/itsbrody/free-software
+@version      1.0.0
+@description  Enlarges the small node toolbar and execute button in the n8n workflow editor. Tested with n8n 2.x. Helpful on high-DPI screens or when the default icons are too tiny to hit.
+@author       Wolfgang (https://github.com/itsbrody)
+@license      MIT
+@homepageURL  https://github.com/itsbrody/free-software/tree/main/n8n/node-toolbar-zoom
+@supportURL   https://github.com/itsbrody/free-software/issues
+@updateURL    https://raw.githubusercontent.com/itsbrody/free-software/main/n8n/node-toolbar-zoom/n8n-node-toolbar-zoom.user.css
+@preprocessor default
+
+@var range toolbarScale "Toolbar scale" [2.0, 1.0, 3.0, 0.1]
+@var range executeScale "Execute button scale" [1.3, 1.0, 2.0, 0.1]
+==/UserStyle== */
+
+@-moz-document regexp("https?://.*/(workflow|workflows)/.*") {
+  [data-test-id="canvas-node-toolbar"] {
+    transform: scale(var(--toolbarScale));
+    transform-origin: bottom center;
+  }
+
+  [data-test-id^="execute-workflow-button-"] {
+    transform: scale(var(--executeScale)) !important;
+    transform-origin: bottom right !important;
+  }
+}

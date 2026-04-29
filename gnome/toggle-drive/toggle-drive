@@ -1,0 +1,74 @@
+#!/bin/bash
+# toggle-drive — Laufwerke im GNOME Dock ein-/ausblenden
+# Usage: sudo toggle-drive [sda5|sda6|all] [show|hide]
+# Ohne Argumente: Status anzeigen
+
+RULES_DIR="/etc/udev/rules.d"
+
+toggle() {
+    local name="99-hide-${1}.rules"
+    local action="$2"
+
+    if [ "$action" = "hide" ]; then
+        if [ -f "$RULES_DIR/${name}.disabled" ]; then
+            mv "$RULES_DIR/${name}.disabled" "$RULES_DIR/${name}"
+            echo "$1: ausgeblendet"
+        elif [ -f "$RULES_DIR/${name}" ]; then
+            echo "$1: war schon ausgeblendet"
+        else
+            echo "$1: keine Regel gefunden"
+        fi
+    elif [ "$action" = "show" ]; then
+        if [ -f "$RULES_DIR/${name}" ]; then
+            mv "$RULES_DIR/${name}" "$RULES_DIR/${name}.disabled"
+            echo "$1: sichtbar"
+        elif [ -f "$RULES_DIR/${name}.disabled" ]; then
+            echo "$1: war schon sichtbar"
+        else
+            echo "$1: keine Regel gefunden"
+        fi
+    fi
+}
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "toggle-drive — Laufwerke im Dock ein-/ausblenden"
+    echo ""
+    echo "Usage: sudo toggle-drive [sda5|sda6|all] [show|hide]"
+    echo ""
+    echo "Status:"
+    found=0
+    for f in "$RULES_DIR"/99-hide-sda*.rules*; do
+        [ -f "$f" ] || continue
+        found=1
+        base=$(basename "$f")
+        if [[ "$base" == *.disabled ]]; then
+            drive="${base#99-hide-}"
+            drive="${drive%.rules.disabled}"
+            echo "  $drive: sichtbar"
+        else
+            drive="${base#99-hide-}"
+            drive="${drive%.rules}"
+            echo "  $drive: ausgeblendet"
+        fi
+    done
+    if [ "$found" -eq 0 ]; then
+        echo "  Keine schaltbaren Regeln gefunden."
+    fi
+    exit 0
+fi
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Fehler: braucht root-Rechte. Bitte mit sudo ausführen."
+    exit 1
+fi
+
+if [ "$1" = "all" ]; then
+    toggle sda5 "$2"
+    toggle sda6 "$2"
+else
+    toggle "$1" "$2"
+fi
+
+udevadm control --reload-rules
+udevadm trigger
+echo "udev-Regeln neu geladen."

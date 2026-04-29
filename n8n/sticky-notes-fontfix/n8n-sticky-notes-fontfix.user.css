@@ -1,0 +1,27 @@
+/* ==UserStyle==
+@name         n8n Sticky Notes Font Fix
+@namespace    github.com/itsbrody/free-software
+@version      1.0.0
+@description  Enlarges the tiny font in n8n Sticky Notes (display/view mode). Tested with n8n 2.x. Uses wildcard selector [class*="_sticky_"] to handle hashed class names across versions.
+@author       Wolfgang (https://github.com/itsbrody)
+@license      MIT
+@homepageURL  https://github.com/itsbrody/free-software/tree/main/n8n/sticky-notes-fontfix
+@supportURL   https://github.com/itsbrody/free-software/issues
+@updateURL    https://raw.githubusercontent.com/itsbrody/free-software/main/n8n/sticky-notes-fontfix/n8n-sticky-notes-fontfix.user.css
+@preprocessor default
+
+@var range fontSize "Font size (px)" [22, 12, 32, 1, 'px']
+@var range lineHeight "Line height" [1.6, 1.0, 2.5, 0.1]
+==/UserStyle== */
+
+@-moz-document regexp("https?://.*/(workflow|workflows)/.*") {
+  [class*="_sticky_"] p,
+  [class*="_sticky_"] h1,
+  [class*="_sticky_"] h2,
+  [class*="_sticky_"] h3,
+  [class*="_sticky_"] li,
+  [class*="_sticky_"] span {
+    font-size: var(--fontSize) !important;
+    line-height: var(--lineHeight) !important;
+  }
+}
