@@ -1,0 +1,27 @@
+name: "💡 Idee / Vorschlag"
+description: "Du hast eine Idee für ein bestehendes oder neues Projekt."
+labels: ["idee"]
+body:
+  - type: dropdown
+    id: project
+    attributes:
+      label: Betroffenes Projekt
+      description: "Auf welches Projekt bezieht sich dein Vorschlag?"
+      options:
+        - "Übergreifend / Neues Projekt"
+        - "FreeMyMap (Google Maps → OpenStreetMap)"
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Beschreibung
+      description: "Was ist deine Idee? Was soll erreicht werden?"
+      placeholder: "Ich würde mir wünschen, dass …"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Kontext (optional)
+      description: "Gibt es Hintergrund, der zum Verständnis hilft? Links, Screenshots, Beispiele?"

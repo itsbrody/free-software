@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "🌍 English? Open a blank issue"
+    url: https://github.com/itsbrody/free-software/issues/new
+    about: "Templates are in German — feel free to write in English using a blank issue."

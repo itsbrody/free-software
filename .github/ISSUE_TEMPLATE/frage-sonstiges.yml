@@ -1,0 +1,26 @@
+name: "❓ Frage / Sonstiges"
+description: "Du hast eine Frage zur Nutzung oder etwas anderes auf dem Herzen."
+labels: ["frage"]
+body:
+  - type: dropdown
+    id: project
+    attributes:
+      label: Betroffenes Projekt
+      description: "Auf welches Projekt bezieht sich deine Frage?"
+      options:
+        - "Übergreifend / Allgemein"
+        - "FreeMyMap (Google Maps → OpenStreetMap)"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Deine Frage
+      description: "Was möchtest du wissen?"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Kontext (optional)
+      description: "Was hast du schon versucht oder wo bist du hängengeblieben?"

@@ -67,9 +67,7 @@ Alle Projekte in diesem Repository folgen diesen Grundsätzen:
 
 ## Mitmachen
 
-Freie Software lebt vom Mitmachen. Wenn du einen Fehler findest, eine Idee hast oder etwas beitragen möchtest — Issues und Pull Requests sind willkommen.
-
-Für größere Beiträge empfehle ich, vorher ein Issue zu eröffnen, damit wir den Rahmen gemeinsam abstecken können.
+Freie Software lebt vom Mitmachen. Wenn du einen Fehler findest, eine Idee hast oder etwas beitragen möchtest — öffne ein Issue. Die vorbereiteten Templates helfen dabei, die richtige Kategorie zu wählen.
 
 Du möchtest ein Projekt in eine eigene Richtung weiterentwickeln? Dann fork es — genau dafür ist freie Software da.
 
@@ -88,7 +86,7 @@ Du möchtest ein Projekt in eine eigene Richtung weiterentwickeln? Dann fork es 
 
 I'm the founder of [Clear Consulting LLC](https://klare-beratung.de), where clarity and freedom go hand in hand — in technology, in data, and in how we shape our lives. This repository brings the freedom side to life: open-source tools, adaptations of existing projects, and resources for digital sovereignty — all released under recognized free licenses, built on open formats, and meant to be useful in practice.
 
-Contributions are welcome — open issues, submit pull requests, or simply fork and build on what's here. That's what free software is for.
+Contributions are welcome — open an issue or simply fork and build on what's here. That's what free software is for.
 
 ### Keep Android Open
 
