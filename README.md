@@ -43,6 +43,26 @@ Eigenständige Projekte mit eigenem Repository und kleinere Tools, die hier im R
 Tech: PHP, JavaScript, HTML · Lizenz: MIT · [GitHub](https://github.com/itsbrody/FreeMyMap)
 Fork von [Maps2BayernAtlas](https://github.com/LukaWe/Maps2BayernAtlas) von LukaWe (MIT)
 
+### Tools
+
+**OSM → OsmAnd Pin** — Konvertiert OpenStreetMap-URLs (Node, Way, Relation) zu OsmAnd-Pin-URLs mit exakten Koordinaten via OSM-API. Standalone-HTML, kein Server nötig.  
+Tech: HTML, JavaScript (OSM API) · Lizenz: MIT · [`osm/osm2pin/`](osm/osm2pin/)
+
+**n8n Sticky Notes Font Fix** — Stylus-CSS zur Vergrößerung der Schrift in n8n Sticky Notes (Display-Modus). Umgeht die gehashten Klassennamen von n8n.  
+Tech: CSS (UserCSS) · Lizenz: MIT · [`n8n/sticky-notes-fontfix/`](n8n/sticky-notes-fontfix/)
+
+**n8n Node Toolbar Zoom** — Stylus-CSS zur Vergrößerung der Node-Toolbar und des Execute-Buttons im n8n Workflow-Editor.  
+Tech: CSS (UserCSS) · Lizenz: MIT · [`n8n/node-toolbar-zoom/`](n8n/node-toolbar-zoom/)
+
+**Toolbar Toggle** — Notepad++ Toolbar per Shortcut ein-/ausblenden — Workaround für Desktop-Wechsel-Bug.  
+Tech: PythonScript (Notepad++ Plugin) · Lizenz: MIT · [`npp/toolbar-toggle/`](npp/toolbar-toggle/)
+
+**Toggle Drive** — Laufwerke im GNOME-Dock per Kommandozeile ein-/ausblenden — schaltet udev-Regeln und zeigt aktuellen Status.  
+Tech: Bash, udev · Lizenz: MIT · [`gnome/toggle-drive/`](gnome/toggle-drive/)
+
+**Calc Monatsbereiche** — Automatische Monatsbereiche (1.5.26 – 31.5.26) mit DATUM/ZEILE-Formel — ohne Hilfsspalten.  
+Tech: LibreOffice Calc Formel · Lizenz: MIT · [`libreoffice/calc-monatsbereiche/`](libreoffice/calc-monatsbereiche/)
+
 <!-- PROJECTS_END -->
 
 ## Warum Freiheit?
@@ -109,6 +129,12 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 <!-- PROJECTS_EN_START -->
 
 - **FreeMyMap** → [GitHub](https://github.com/itsbrody/FreeMyMap)
+- **OSM → OsmAnd Pin** → [`osm/osm2pin/`](osm/osm2pin/)
+- **n8n Sticky Notes Font Fix** → [`n8n/sticky-notes-fontfix/`](n8n/sticky-notes-fontfix/)
+- **n8n Node Toolbar Zoom** → [`n8n/node-toolbar-zoom/`](n8n/node-toolbar-zoom/)
+- **Toolbar Toggle** → [`npp/toolbar-toggle/`](npp/toolbar-toggle/)
+- **Toggle Drive** → [`gnome/toggle-drive/`](gnome/toggle-drive/)
+- **Calc Monatsbereiche** → [`libreoffice/calc-monatsbereiche/`](libreoffice/calc-monatsbereiche/)
 
 <!-- PROJECTS_EN_END -->
 ---

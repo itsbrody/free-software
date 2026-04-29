@@ -8,8 +8,14 @@ body:
       label: Betroffenes Projekt
       description: "Auf welches Projekt bezieht sich deine Frage?"
       options:
-        - "Übergreifend / Allgemein"
-        - "FreeMyMap (Google Maps → OpenStreetMap)"
+        - "Übergreifend / Neues Projekt"
+        - "FreeMyMap"
+        - "OSM → OsmAnd Pin"
+        - "n8n Sticky Notes Font Fix"
+        - "n8n Node Toolbar Zoom"
+        - "Toolbar Toggle"
+        - "Toggle Drive"
+        - "Calc Monatsbereiche"
     validations:
       required: true
   - type: textarea
