@@ -16,6 +16,7 @@ body:
         - "Toolbar Toggle"
         - "Toggle Drive"
         - "Calc Monatsbereiche"
+        - "YouTube ohne Werbung (iPhone)"
     validations:
       required: true
   - type: textarea

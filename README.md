@@ -42,6 +42,7 @@ Eigenständige Projekte mit eigenem Repository und kleinere Tools, die hier im R
 **FreeMyMap** — Befreit Karten-Links von proprietären Diensten — Google Maps & Apple Maps rein, OpenStreetMap raus. Weltweit, frei, ohne Tracking.  
 Tech: PHP, JavaScript, HTML · Lizenz: MIT · [GitHub](https://github.com/itsbrody/FreeMyMap)
 Fork von [Maps2BayernAtlas](https://github.com/LukaWe/Maps2BayernAtlas) von LukaWe (MIT)
+Live: [https://fmm.tools.klare-beratung.de](https://fmm.tools.klare-beratung.de)
 
 ### Tools
 
@@ -62,6 +63,11 @@ Tech: Bash, udev · Lizenz: MIT · [`gnome/toggle-drive/`](gnome/toggle-drive/)
 
 **Calc Monatsbereiche** — Automatische Monatsbereiche (1.5.26 – 31.5.26) mit DATUM/ZEILE-Formel — ohne Hilfsspalten.  
 Tech: LibreOffice Calc Formel · Lizenz: MIT · [`libreoffice/calc-monatsbereiche/`](libreoffice/calc-monatsbereiche/)
+
+### Anleitungen
+
+**YouTube ohne Werbung (iPhone)** — Schritt-für-Schritt-Anleitung zur Einrichtung von Yattee als werbefreie YouTube-Alternative auf iOS. Zielgruppe: Einsteiger ohne technische Vorkenntnisse.  
+Format: PDF · Plattform: iOS · [PDF](ios/yattee/Anleitung.pdf)
 
 <!-- PROJECTS_END -->
 
@@ -135,6 +141,7 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 - **Toolbar Toggle** → [`npp/toolbar-toggle/`](npp/toolbar-toggle/)
 - **Toggle Drive** → [`gnome/toggle-drive/`](gnome/toggle-drive/)
 - **Calc Monatsbereiche** → [`libreoffice/calc-monatsbereiche/`](libreoffice/calc-monatsbereiche/)
+- **YouTube ohne Werbung (iPhone)** → [PDF](ios/yattee/Anleitung.pdf)
 
 <!-- PROJECTS_EN_END -->
 ---
