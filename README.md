@@ -66,8 +66,13 @@ Tech: LibreOffice Calc Formel · Lizenz: MIT · [`libreoffice/calc-monatsbereich
 
 ### Anleitungen
 
-**YouTube ohne Werbung (iPhone)** — Schritt-für-Schritt-Anleitung zur Einrichtung von Yattee als werbefreie YouTube-Alternative auf iOS. Zielgruppe: Einsteiger ohne technische Vorkenntnisse.  
+**YouTube ohne Werbung (iPhone)** — Schritt-für-Schritt-Anleitung zur Einrichtung von Yattee als werbefreie YouTube-Alternative auf iOS.  
+Zielgruppe: Einsteiger ohne technische Vorkenntnisse  
 Format: PDF · Plattform: iOS · [PDF](ios/yattee/Anleitung.pdf)
+
+**GRUB – Doppelte Windows-Einträge entfernen** — Überflüssige Windows-Einträge im GRUB-Bootmanager entfernen, die durch die System Reserved- oder EFI-Partition entstehen.  
+Zielgruppe: Dual-Boot-Nutzer (Linux + Windows 7/8/10/11)  
+Format: PDF · Plattform: Linux · [PDF](unix/grub/Anleitung.pdf)
 
 <!-- PROJECTS_END -->
 
@@ -142,6 +147,7 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 - **Toggle Drive** → [`gnome/toggle-drive/`](gnome/toggle-drive/)
 - **Calc Monatsbereiche** → [`libreoffice/calc-monatsbereiche/`](libreoffice/calc-monatsbereiche/)
 - **YouTube ohne Werbung (iPhone)** → [PDF](ios/yattee/Anleitung.pdf)
+- **GRUB – Doppelte Windows-Einträge entfernen** → [PDF](unix/grub/Anleitung.pdf)
 
 <!-- PROJECTS_EN_END -->
 ---

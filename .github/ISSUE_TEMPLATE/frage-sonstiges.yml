@@ -17,6 +17,7 @@ body:
         - "Toggle Drive"
         - "Calc Monatsbereiche"
         - "YouTube ohne Werbung (iPhone)"
+        - "GRUB – Doppelte Windows-Einträge entfernen"
     validations:
       required: true
   - type: textarea
