@@ -61,6 +61,9 @@ Tech: PythonScript (Notepad++ Plugin) · Lizenz: MIT · [`npp/toolbar-toggle/`](
 **Toggle Drive** — Laufwerke im GNOME-Dock per Kommandozeile ein-/ausblenden — schaltet udev-Regeln und zeigt aktuellen Status.  
 Tech: Bash, udev · Lizenz: MIT · [`gnome/toggle-drive/`](gnome/toggle-drive/)
 
+**Ctrl+Alt+Del Systemmenü** — Ersetzt die Standard-Abmelden-Belegung durch ein Windows-ähnliches Systemmenü (Sperren, Systemmonitor, Abmelden, Neustart, Herunterfahren) via zenity.  
+Tech: Bash, zenity · Lizenz: MIT · [`gnome/ctrl-alt-del-menu/`](gnome/ctrl-alt-del-menu/)
+
 **Calc Monatsbereiche** — Automatische Monatsbereiche (1.5.26 – 31.5.26) mit DATUM/ZEILE-Formel — ohne Hilfsspalten.  
 Tech: LibreOffice Calc Formel · Lizenz: MIT · [`libreoffice/calc-monatsbereiche/`](libreoffice/calc-monatsbereiche/)
 
@@ -145,6 +148,7 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 - **n8n Node Toolbar Zoom** → [`n8n/node-toolbar-zoom/`](n8n/node-toolbar-zoom/)
 - **Toolbar Toggle** → [`npp/toolbar-toggle/`](npp/toolbar-toggle/)
 - **Toggle Drive** → [`gnome/toggle-drive/`](gnome/toggle-drive/)
+- **Ctrl+Alt+Del Systemmenü** → [`gnome/ctrl-alt-del-menu/`](gnome/ctrl-alt-del-menu/)
 - **Calc Monatsbereiche** → [`libreoffice/calc-monatsbereiche/`](libreoffice/calc-monatsbereiche/)
 - **YouTube ohne Werbung (iPhone)** → [PDF](ios/yattee/Anleitung.pdf)
 - **GRUB – Doppelte Windows-Einträge entfernen** → [PDF](unix/grub/Anleitung.pdf)
