@@ -19,6 +19,7 @@ body:
         - "Calc Monatsbereiche"
         - "YouTube ohne Werbung (iPhone)"
         - "GRUB – Doppelte Windows-Einträge entfernen"
+        - "NTFS ntfs3 $BadClus Bug umgehen"
     validations:
       required: true
   - type: textarea

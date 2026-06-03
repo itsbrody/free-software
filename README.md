@@ -77,6 +77,10 @@ Format: PDF · Plattform: iOS · [PDF](ios/yattee/Anleitung.pdf)
 Zielgruppe: Dual-Boot-Nutzer (Linux + Windows 7/8/10/11)  
 Format: PDF · Plattform: Linux · [PDF](unix/grub/Anleitung.pdf)
 
+**NTFS ntfs3 $BadClus Bug umgehen** — NTFS-Partition lässt sich unter Ubuntu nicht mounten — ntfs3-Kerneltreiber-Bug mit $BadClus per udisks2-Konfiguration umgehen.  
+Zielgruppe: Linux-Nutzer mit NTFS-Datenträgern  
+Format: PDF · Plattform: Linux · [PDF](unix/ntfs/Anleitung.pdf)
+
 <!-- PROJECTS_END -->
 
 ## Warum Freiheit?
@@ -152,6 +156,7 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 - **Calc Monatsbereiche** → [`libreoffice/calc-monatsbereiche/`](libreoffice/calc-monatsbereiche/)
 - **YouTube ohne Werbung (iPhone)** → [PDF](ios/yattee/Anleitung.pdf)
 - **GRUB – Doppelte Windows-Einträge entfernen** → [PDF](unix/grub/Anleitung.pdf)
+- **NTFS ntfs3 $BadClus Bug umgehen** → [PDF](unix/ntfs/Anleitung.pdf)
 
 <!-- PROJECTS_EN_END -->
 ---
