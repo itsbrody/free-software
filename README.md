@@ -81,6 +81,10 @@ Format: PDF · Plattform: Linux · [PDF](unix/grub/Anleitung.pdf)
 Zielgruppe: Linux-Nutzer mit NTFS-Datenträgern  
 Format: PDF · Plattform: Linux · [PDF](unix/ntfs/Anleitung.pdf)
 
+**Linux aufräumen – Stellen die unbemerkt Platz fressen** — Snap-Altlasten, APT-Cache, alte Kernel, Journal-Logs, Thumbnails und Papierkorb aufräumen. Mit optionalem systemd-Timer für automatisches Cleanup.  
+Zielgruppe: Linux-Desktop-Nutzer (Ubuntu / Debian-basiert)  
+Format: PDF · Plattform: Linux · [PDF](unix/cleanup/Anleitung.pdf)
+
 <!-- PROJECTS_END -->
 
 ## Warum Freiheit?
@@ -157,6 +161,7 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 - **YouTube ohne Werbung (iPhone)** → [PDF](ios/yattee/Anleitung.pdf)
 - **GRUB – Doppelte Windows-Einträge entfernen** → [PDF](unix/grub/Anleitung.pdf)
 - **NTFS ntfs3 $BadClus Bug umgehen** → [PDF](unix/ntfs/Anleitung.pdf)
+- **Linux aufräumen – Stellen die unbemerkt Platz fressen** → [PDF](unix/cleanup/Anleitung.pdf)
 
 <!-- PROJECTS_EN_END -->
 ---

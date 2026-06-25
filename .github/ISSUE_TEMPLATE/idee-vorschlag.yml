@@ -20,6 +20,7 @@ body:
         - "YouTube ohne Werbung (iPhone)"
         - "GRUB – Doppelte Windows-Einträge entfernen"
         - "NTFS ntfs3 $BadClus Bug umgehen"
+        - "Linux aufräumen – Stellen die unbemerkt Platz fressen"
     validations:
       required: true
   - type: textarea
