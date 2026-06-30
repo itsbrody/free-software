@@ -21,6 +21,7 @@ body:
         - "GRUB – Doppelte Windows-Einträge entfernen"
         - "NTFS ntfs3 $BadClus Bug umgehen"
         - "Linux aufräumen – Stellen die unbemerkt Platz fressen"
+        - "Touchpad eingefroren – Mauszeiger bewegt sich nicht mehr"
     validations:
       required: true
   - type: textarea

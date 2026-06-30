@@ -85,6 +85,10 @@ Format: PDF · Plattform: Linux · [PDF](unix/ntfs/Anleitung.pdf)
 Zielgruppe: Linux-Desktop-Nutzer (Ubuntu / Debian-basiert)  
 Format: PDF · Plattform: Linux · [PDF](unix/cleanup/Anleitung.pdf)
 
+**Touchpad eingefroren – Mauszeiger bewegt sich nicht mehr** — Fn-Taste deaktiviert versehentlich das Touchpad unter GNOME. Schnelle Lösung per gsettings plus systematische Diagnose für andere Ursachen.  
+Zielgruppe: Linux-Laptop-Nutzer (GNOME-Desktop)  
+Format: PDF · Plattform: Linux · [PDF](unix/touchpad-freeze/Anleitung.pdf)
+
 <!-- PROJECTS_END -->
 
 ## Warum Freiheit?
@@ -162,6 +166,7 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 - **GRUB – Doppelte Windows-Einträge entfernen** → [PDF](unix/grub/Anleitung.pdf)
 - **NTFS ntfs3 $BadClus Bug umgehen** → [PDF](unix/ntfs/Anleitung.pdf)
 - **Linux aufräumen – Stellen die unbemerkt Platz fressen** → [PDF](unix/cleanup/Anleitung.pdf)
+- **Touchpad eingefroren – Mauszeiger bewegt sich nicht mehr** → [PDF](unix/touchpad-freeze/Anleitung.pdf)
 
 <!-- PROJECTS_EN_END -->
 ---
