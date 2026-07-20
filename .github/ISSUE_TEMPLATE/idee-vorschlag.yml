@@ -10,6 +10,7 @@ body:
       options:
         - "Übergreifend / Neues Projekt"
         - "FreeMyMap"
+        - "Clear Wicket"
         - "OSM → OsmAnd Pin"
         - "n8n Sticky Notes Font Fix"
         - "n8n Node Toolbar Zoom"

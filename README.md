@@ -44,6 +44,9 @@ Tech: PHP, JavaScript, HTML · Lizenz: MIT · [GitHub](https://github.com/itsbro
 Fork von [Maps2BayernAtlas](https://github.com/LukaWe/Maps2BayernAtlas) von LukaWe (MIT)
 Live: [https://fmm.tools.klare-beratung.de](https://fmm.tools.klare-beratung.de)
 
+**Clear Wicket** — Leichtgewichtiges, passwortloses TOTP-Forward-Auth-Gateway für Traefik.  
+Tech: Go · Lizenz: Apache-2.0 · [GitHub](https://github.com/itsbrody/clear-wicket)
+
 ### Tools
 
 **OSM → OsmAnd Pin** — Konvertiert OpenStreetMap-URLs (Node, Way, Relation) zu OsmAnd-Pin-URLs mit exakten Koordinaten via OSM-API. Standalone-HTML, kein Server nötig.  
@@ -155,6 +158,7 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 <!-- PROJECTS_EN_START -->
 
 - **FreeMyMap** → [GitHub](https://github.com/itsbrody/FreeMyMap)
+- **Clear Wicket** → [GitHub](https://github.com/itsbrody/clear-wicket)
 - **OSM → OsmAnd Pin** → [`osm/osm2pin/`](osm/osm2pin/)
 - **n8n Sticky Notes Font Fix** → [`n8n/sticky-notes-fontfix/`](n8n/sticky-notes-fontfix/)
 - **n8n Node Toolbar Zoom** → [`n8n/node-toolbar-zoom/`](n8n/node-toolbar-zoom/)
