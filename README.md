@@ -9,7 +9,7 @@
 
 [![Keep Android Open](https://img.shields.io/badge/Keep_Android_Open-Join_the_Fight-e84545?style=for-the-badge)](https://keepandroidopen.org)
 
-Ab September 2026 will Google jede Android-App blockieren, deren Entwickler sich nicht zentral bei Google registriert, dessen Nutzungsbedingungen zugestimmt, einen amtlichen Ausweis vorgelegt und bezahlt hat. Das betrifft alle Apps auf allen zertifizierten Android-Geräten weltweit — nicht nur den Play Store. [F-Droid](https://f-droid.org), die Heimat tausender freier Android-Apps, bezeichnet dies als existenzielle Bedrohung. 66 Organisationen aus 21 Ländern — darunter die EFF, die FSF, der CCC, Nextcloud und das Tor Project — haben sich in einem [offenen Brief](https://keepandroidopen.org/open-letter) dagegen ausgesprochen.
+Ab 2027 will Google jede Android-App blockieren, deren Entwickler sich nicht zentral bei Google registriert, dessen Nutzungsbedingungen zugestimmt, einen amtlichen Ausweis vorgelegt und bezahlt hat. Das betrifft alle Apps auf allen zertifizierten Android-Geräten weltweit — nicht nur den Play Store. [F-Droid](https://f-droid.org), die Heimat tausender freier Android-Apps, bezeichnet dies als existenzielle Bedrohung. Immer mehr Organisationen weltweit — darunter die EFF, die FSF, der CCC, Nextcloud und das Tor Project — sprechen sich in einem [offenen Brief](https://keepandroidopen.org/open-letter) dagegen aus.
 
 Dieses Thema gehört in dieses Repo, weil es den Kern digitaler Souveränität betrifft: die Freiheit, Software auf eigenen Geräten selbstbestimmt zu installieren und weiterzugeben.
 
@@ -141,7 +141,7 @@ Contributions are welcome — open an issue or simply fork and build on what's h
 
 [![Keep Android Open](https://img.shields.io/badge/Keep_Android_Open-Join_the_Fight-e84545?style=for-the-badge)](https://keepandroidopen.org)
 
-Starting September 2026, Google plans to block every Android app whose developer has not centrally registered with Google, agreed to its terms, submitted government ID, and paid a fee. This applies to all apps on all certified Android devices worldwide — not just the Play Store. [F-Droid](https://f-droid.org), home to thousands of free Android apps, calls this an existential threat. 66 organizations from 21 countries — including the EFF, FSF, CCC, Nextcloud and the Tor Project — have spoken out against it in an [open letter](https://keepandroidopen.org/open-letter).
+Starting in 2027, Google plans to block every Android app whose developer has not centrally registered with Google, agreed to its terms, submitted government ID, and paid a fee. This applies to all apps on all certified Android devices worldwide — not just the Play Store. [F-Droid](https://f-droid.org), home to thousands of free Android apps, calls this an existential threat. A growing number of organizations worldwide — including the EFF, FSF, CCC, Nextcloud and the Tor Project — are speaking out against it in an [open letter](https://keepandroidopen.org/open-letter).
 
 This topic belongs in this repo because it strikes at the core of digital sovereignty: the freedom to install and share software on your own devices.
 
