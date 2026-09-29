@@ -54,9 +54,11 @@ Tech: HTML, JavaScript (OSM API) · Lizenz: MIT · [`osm/osm2pin/`](osm/osm2pin/
 
 **n8n Sticky Notes Font Fix** — Stylus-CSS zur Vergrößerung der Schrift in n8n Sticky Notes (Display-Modus). Umgeht die gehashten Klassennamen von n8n.  
 Tech: CSS (UserCSS) · Lizenz: MIT · [`n8n/sticky-notes-fontfix/`](n8n/sticky-notes-fontfix/)
+Auch auf: [userstyles.world](https://userstyles.world/style/30438/n8n-sticky-notes-font-fix)
 
 **n8n Node Toolbar Zoom** — Stylus-CSS zur Vergrößerung der Node-Toolbar und des Execute-Buttons im n8n Workflow-Editor.  
 Tech: CSS (UserCSS) · Lizenz: MIT · [`n8n/node-toolbar-zoom/`](n8n/node-toolbar-zoom/)
+Auch auf: [userstyles.world](https://userstyles.world/style/30439/n8n-node-toolbar-zoom)
 
 **Toolbar Toggle** — Notepad++ Toolbar per Shortcut ein-/ausblenden — Workaround für Desktop-Wechsel-Bug.  
 Tech: PythonScript (Notepad++ Plugin) · Lizenz: MIT · [`npp/toolbar-toggle/`](npp/toolbar-toggle/)
