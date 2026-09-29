@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name         n8n Sticky Notes Font Fix
 @namespace    github.com/itsbrody/free-software
-@version      1.0.1
-@description  Enlarges the tiny font in n8n Sticky Notes (display/view mode). Tested with n8n 2.x. Uses wildcard selector [class*="_sticky_"] to handle hashed class names across versions.
+@version      1.0.2
+@description  Enlarges the tiny font in n8n Sticky Notes (display mode). Adjustable font size and line height. Matches hashed class names by wildcard. Tested with n8n 2.x.
 @author       Wolfgang (https://klare-beratung.de/freie-software)
 @license      MIT
 @homepageURL  https://github.com/itsbrody/free-software/tree/main/n8n/sticky-notes-fontfix

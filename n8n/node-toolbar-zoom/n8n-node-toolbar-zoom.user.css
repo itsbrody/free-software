@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name         n8n Node Toolbar Zoom
 @namespace    github.com/itsbrody/free-software
-@version      1.0.1
-@description  Enlarges the small node toolbar and execute button in the n8n workflow editor. Tested with n8n 2.x. Helpful on high-DPI screens or when the default icons are too tiny to hit.
+@version      1.0.2
+@description  Enlarges the small node toolbar and execute button in the n8n workflow editor. Adjustable scale. Helpful on high-DPI screens. Tested with n8n 2.x.
 @author       Wolfgang (https://klare-beratung.de/freie-software)
 @license      MIT
 @homepageURL  https://github.com/itsbrody/free-software/tree/main/n8n/node-toolbar-zoom
