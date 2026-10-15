@@ -48,11 +48,11 @@ Auch auf: [klare-beratung.de](https://klare-beratung.de/freie-software#freemymap
 **Clear Wicket** — Leichtgewichtiges, passwortloses TOTP-Forward-Auth-Gateway für Traefik.  
 Tech: Go · Lizenz: Apache-2.0 · [GitHub](https://github.com/itsbrody/clear-wicket)
 
+**CalDAV-Tools** — Sichert, analysiert und ändert CalDAV-Aufgaben, -Journale und -Notizen. Für den Serverumzug (z. B. GMX → Nextcloud), ohne Verknüpfungen zwischen Aufgaben und Journalen zu verlieren.  
+Tech: Python · Lizenz: MIT · [GitHub](https://github.com/itsbrody/caldav-tools)
+
 **Cal Sync Checker** — Gleicht Buchungen aus Cal.eu bzw. Cal.com mit einem CalDAV-Kalender ab und legt fehlende Kalendereinträge an. Dry-Run mit .ics-Export, Daemon-Betrieb als systemd-Dienst.  
 Tech: Python · Lizenz: MIT · [GitHub](https://github.com/itsbrody/cal-sync-checker) · *nicht mehr gepflegt*
-
-**caldav-tools** — Sichert, analysiert und ändert CalDAV-Aufgaben, -Journale und -Notizen. Für den Serverumzug (z. B. GMX → Nextcloud), ohne Verknüpfungen zwischen Aufgaben und Journalen zu verlieren.  
-Tech: Python · Lizenz: MIT · [GitHub](https://github.com/itsbrody/caldav-tools)
 
 ### Tools
 
@@ -168,8 +168,8 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 
 - **FreeMyMap** → [GitHub](https://github.com/itsbrody/FreeMyMap)
 - **Clear Wicket** → [GitHub](https://github.com/itsbrody/clear-wicket)
+- **CalDAV-Tools** → [GitHub](https://github.com/itsbrody/caldav-tools)
 - **Cal Sync Checker** → [GitHub](https://github.com/itsbrody/cal-sync-checker) *(archived)*
-- **caldav-tools** → [GitHub](https://github.com/itsbrody/caldav-tools)
 - **OSM → OsmAnd Pin** → [`osm/osm2pin/`](osm/osm2pin/)
 - **n8n Sticky Notes Font Fix** → [`n8n/sticky-notes-fontfix/`](n8n/sticky-notes-fontfix/)
 - **n8n Node Toolbar Zoom** → [`n8n/node-toolbar-zoom/`](n8n/node-toolbar-zoom/)
