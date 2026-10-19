@@ -93,7 +93,11 @@ Format: PDF · Plattform: Linux · [PDF](unix/grub/Anleitung.pdf)
 Zielgruppe: Linux-Nutzer mit NTFS-Datenträgern  
 Format: PDF · Plattform: Linux · [PDF](unix/ntfs/Anleitung.pdf)
 
-**Linux aufräumen – Stellen die unbemerkt Platz fressen** — Snap-Altlasten, APT-Cache, alte Kernel, Journal-Logs, Thumbnails und Papierkorb aufräumen. Mit optionalem systemd-Timer für automatisches Cleanup.  
+**Ubuntu friert beim Zugriff auf Windows-Laufwerke ein** — Dual-Boot-NTFS sauber einrichten: Windows richtig herunterfahren, ntfs3-Kerneltreiber per fstab nutzen und udisks2 für Klick-Mounts im Dateimanager konfigurieren.  
+Zielgruppe: Dual-Boot-Nutzer (Ubuntu ab 22.04 + Windows 7/8/10/11)  
+Format: PDF · Plattform: Linux · [PDF](unix/dual-boot-ntfs/Anleitung.pdf)
+
+**Linux aufräumen – Stellen die unbemerkt Platz fressen** — Snap-Altlasten, APT-Cache, alte Kernel, Journal-Logs, Thumbnails und Papierkorb aufräumen. Mit Bash-Skript und optionalem systemd-Timer für automatisches Cleanup.  
 Zielgruppe: Linux-Desktop-Nutzer (Ubuntu / Debian-basiert)  
 Format: PDF · Plattform: Linux · [PDF](unix/cleanup/Anleitung.pdf)
 
@@ -180,6 +184,7 @@ This topic belongs in this repo because it strikes at the core of digital sovere
 - **YouTube ohne Werbung (iPhone)** → [PDF](ios/yattee/Anleitung.pdf)
 - **GRUB – Doppelte Windows-Einträge entfernen** → [PDF](unix/grub/Anleitung.pdf)
 - **NTFS ntfs3 $BadClus Bug umgehen** → [PDF](unix/ntfs/Anleitung.pdf)
+- **Ubuntu friert beim Zugriff auf Windows-Laufwerke ein** → [PDF](unix/dual-boot-ntfs/Anleitung.pdf)
 - **Linux aufräumen – Stellen die unbemerkt Platz fressen** → [PDF](unix/cleanup/Anleitung.pdf)
 - **Touchpad eingefroren – Mauszeiger bewegt sich nicht mehr** → [PDF](unix/touchpad-freeze/Anleitung.pdf)
 

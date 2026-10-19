@@ -22,6 +22,7 @@ body:
         - "YouTube ohne Werbung (iPhone)"
         - "GRUB – Doppelte Windows-Einträge entfernen"
         - "NTFS ntfs3 $BadClus Bug umgehen"
+        - "Ubuntu friert beim Zugriff auf Windows-Laufwerke ein"
         - "Linux aufräumen – Stellen die unbemerkt Platz fressen"
         - "Touchpad eingefroren – Mauszeiger bewegt sich nicht mehr"
     validations:
